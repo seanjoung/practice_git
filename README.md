@@ -55,6 +55,7 @@ foreach ($filePath in $filesToDelete) {
 # 로그 파일 저장 (CP949 인코딩)
 $logEntries | Out-File -FilePath $logFile -Encoding OEM
 Write-Host "삭제 로그가 $logFile 에 저장되었습니다." -ForegroundColor Green
+
 ### 2) deletelist.txt
 $deleteList = @"
 "H:\test - test.mov",
@@ -62,6 +63,7 @@ $deleteList = @"
 $deleteList | Out-File -FilePath "C:\Scripts\deletelist.txt" -Encoding utf8BOM
 
 
+### 3)DeleteFromTxt.ps1 실행
 PS C:\Scripts> cd C:\Scripts
 >> Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
 >> .\DeleteFromTxt.ps1
